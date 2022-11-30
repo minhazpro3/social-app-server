@@ -15,7 +15,7 @@ connectToServer((err) => {
       console.log("HEY connected database", port);
     });
   } else {
-    console.log("You have to  sure connect!!!");
+    console.log("You have to  sure connect!!");
   }
 });
 
