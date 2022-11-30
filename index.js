@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const { connectToServer } = require("./utils/dbConnect");
 const errorhandler = require("./middleware/errorhandler");
+const userRouter = require("./routes/v1/user.route");
 require("dotenv").config();
 const app = express();
 const port = process.env.PORT || 5000;
@@ -17,6 +18,8 @@ connectToServer((err) => {
     console.log("You have to  sure connect!!!");
   }
 });
+
+app.use("/api/v1/user", userRouter);
 
 app.all("*", (req, res) => {
   res.send("No route found");
